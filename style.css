@@ -1,0 +1,189 @@
+/*
+Theme Name: OMCCT Ritter Theme
+Author: Simmi
+Description: Custom Theme für den Ritterorden mit überstehendem Wappen.
+Version: 1.0
+*/
+
+/* Grund-Setup */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background-color: #ffffff;
+
+    background-image: 
+        url('wappen_30.png');
+    
+    background-position:
+        center 200px;
+    
+    background-repeat: 
+        no-repeat;
+    
+    background-attachment: fixed;
+    
+}
+
+/* .site-header { */
+/*     position: fixed; */
+/*     top: 0; */
+/*     left: 0; */
+/*     width: 100%; */
+/*     z-index: 1000; /\* Damit er über allem anderen liegt *\/ */
+/*     background-color: white; /\* Der weiße Gap über dem roten Balken *\/ */
+/* } */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Wir nutzen kein Margin, sondern Padding im Header für den Gap */
+    padding-top: 40px; 
+    background-color: #ffffff; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    
+    
+    pointer-events: none; /* Verhindert, dass der unsichtbare Bereich Klicks schluckt */
+}
+
+/* Der rote Balken */
+/* .red-stripe { */
+/*     background-color: #b00000; */
+/*     height: 80px; */
+/*     width: 100%; */
+/*     display: flex; */
+/*     align-items: center; */
+/*     position: relative; */
+/*     color: white; */
+/*     margin-top: 40px; /\* DAS erzeugt den Gap oben *\/     */
+/* } */
+.red-stripe {
+    background-color: #b00000;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* Der weiße Streifen ganz oben */
+}
+
+/* Container für Text und Logo */
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Text im Header */
+.branding {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Das "Überstehende" Wappen-Geheimnis */
+.logo-area {
+    position: relative;
+    width: 150px; /* Platzhalter Breite */
+    height: 80px;
+}
+
+.logo-area img {
+    position: absolute;
+    top: -20px;    /* Schiebt das Logo 20px ÜBER den roten Balken hinaus */
+    right: 0;
+    height: 140px; /* Bleibt bei 140px, damit es unten auch deutlich rausragt */
+    width: auto;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+    z-index: 100;
+}
+
+/* Content Bereich */
+.site-content {
+    padding: 100px 50px 50px; /* Oben mehr Platz wegen dem hängenden Logo */
+    max-width: 800px;
+}
+
+/* Der Master-Container für alles, was zentriert sein soll */
+.main-container {
+    width: 90%;
+    max-width: 1100px; /* Hier kannst du die Gesamtbreite festlegen */
+    margin: 0 auto;
+    position: relative;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Layout unter dem Header */
+.page-layout {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 40px; /* Abstand nach oben zum roten Balken */
+}
+
+/* Die Ranke als linke Begrenzung des Inhalts */
+.sidebar-decoration {
+    width: 60px; /* Breite deiner Ranke */
+    flex-shrink: 0;
+}
+
+.sidebar-decoration img {
+    width: 100%;
+    height: auto;
+    /* Falls die Ranke sich wiederholen soll, nutzen wir hier 
+       besser ein Hintergrundbild statt eines <img> Tags */
+}
+
+.content-wrapper {
+    margin-top: 100px; /* Platz für den fixierten Header lassen */
+    padding-left: 80px; /* Platz für die fixierte Ranke lassen */
+    /* Der Wrapper selbst zentriert sich im main-container */
+}
+
+.fixed-sidebar-decoration {
+    position: fixed;
+    /* Startet exakt unter dem roten Balken: 20px Gap + 80px Rot = 100px */
+    top: 100px; 
+    /* Positioniert sie am linken Rand des zentrierten Bereichs */
+    left: calc(50% - 550px); 
+    width: 160px;
+    height: calc(100vh - 100px); /* Geht vom Header bis zum unteren Bildschirmrand */
+    
+    background-image: url('ranke.png');
+    background-repeat: repeat-y;
+    z-index: 900; /* Hinter dem Header, aber vor dem Content */
+}
+
+.site-content {
+    flex-grow: 1;
+    /* padding-left: 40px; /\* Abstand zwischen Ranke und Text *\/ */
+    /* padding-top: 20px; */
+    padding: 20px 40px 40px 80px;
+}
+
+/* Das Wasserzeichen-Wappen legen wir jetzt nur in den Content-Bereich */
+.page-layout {
+    background-image: url('wappen-bg.png');
+    background-position: center 100px;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Scrollt jetzt natürlich mit dem Text mit */
+}

@@ -3,6 +3,7 @@
     flex-direction: column;
     color: #ffffff;
     pointer-events: auto;
+    align-items: center;
 }
 
 .title {
@@ -16,6 +17,7 @@
     font-size: 12px;
     font-style: italic;
     opacity: 0.9;
+    white-space: nowrap;
 }
 
 .logo-area {

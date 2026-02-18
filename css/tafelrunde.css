@@ -1,0 +1,111 @@
+.tafelrunde-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.members-column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-sidebar {
+    flex: 1;
+    position: sticky;
+    top: 120px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border: 1px solid #b00000;
+    border-radius: 5px;
+}
+
+.ritter-card {
+    background-image: url('../img/pergament-bg.png');
+    /* background-color: #f4e4bc; */
+    /* border: 1px solid #d2b48c; */
+    /* box-shadow: 3px 3px 15px rgba(0,0,0,0.2); */
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    border-radius: 2px;
+}
+
+.ritter-photo img {
+    width: 200px;
+    height: auto;
+    border: 3px solid #b00000;
+}
+
+.ritter-details h2 {
+    margin-top: 0;
+    color: #b00000;
+    font-family: 'Georgia', serif;
+    border-bottom: 1px solid #b00000;
+}
+
+.ritter-card {
+    position: relative; /* Wichtig für die Positionierung des Wappens */
+}
+
+.ritter-wappen-overlay {
+    height: auto;
+    position: absolute;
+    left: 180px; /* Schiebt es genau zwischen Foto und Text */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    z-index: 10;
+}
+
+.ritter-wappen-img {
+  width: 200px;
+}
+
+.global-info-dropdown {
+    position: relative;
+    margin-bottom: 20px;
+    font-family: serif;
+}
+
+.info-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid #000;
+    padding: 5px 15px;
+    background: #fff;
+    width: fit-content;
+}
+
+.info-icon-circle {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+    font-size: 14px;
+}
+
+.info-content-box {
+    display: none; /* Standardmäßig versteckt */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background: #fdfaf3; /* Leichtes Pergament-Weiß */
+    border: 1px solid #630;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
+
+.info-content-box.active {
+    display: block; /* Wird per JS aktiviert */
+}

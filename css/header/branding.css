@@ -1,0 +1,36 @@
+.branding {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    pointer-events: auto;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.tagline {
+    font-size: 12px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.logo-area {
+    position: relative;
+    width: 150px;
+    height: 80px; 
+}
+
+.logo-area img {
+    position: absolute;
+    top: -20px;   
+    right: 0;
+    height: 140px;
+    width: auto;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+    z-index: 1100;
+    pointer-events: auto;
+}

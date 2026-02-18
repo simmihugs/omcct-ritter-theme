@@ -1,0 +1,31 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 40px;
+    background-color: #ffffff; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    pointer-events: none;
+}
+
+.red-stripe {
+    background-color: #b00000;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.header-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    pointer-events: auto;
+}

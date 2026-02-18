@@ -1,6 +1,6 @@
 <?php /* footer.php */ ?>
     </div> </div> <footer class="site-footer">
-    <div class="footer-container">
+    <div class="footer-content-box">
         <div class="footer-copyright">
             &copy; <?php echo date('Y'); ?> OMCCT - Ordo Militiae Christi Chordi ad
         </div>

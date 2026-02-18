@@ -15,7 +15,7 @@
                 <span class="tagline">Ordo Militiae Christi Chordi ad</span>
             </div>
             <div class="logo-area">
-                <img src="<?php echo get_template_directory_uri(); ?>/screenshot.png" alt="Wappen">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/screenshot.png" alt="Wappen">
             </div>
         </div>
     </div>

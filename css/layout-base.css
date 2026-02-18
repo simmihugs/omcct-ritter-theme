@@ -6,30 +6,8 @@ html, body {
   margin: 0;
   padding: 0;
   height: 90%;
-  /* overflow: hidden;*/
 }
 
-/* html { */
-/*   height: 100%; */
-/* } */
-
-/* body { */
-/*   /\* height: 100%;  *\/ */
-/*   margin: 0; */
-/*   padding: 0; */
-/*   font-family: 'Georgia', serif; */
-/*   background-color: #ffffff; */
-  
-/*   background-image: url('../img/wappen_30.png'); */
-/*   background-position: center 200px; */
-/*   background-repeat: no-repeat; */
-/*   background-attachment: fixed; */
-
-/*   display: flex; */
-/*   flex-direction: column; */
-/*   min-height: 100vh; */
-/*   margin: 0;     */
-/* } */
 body {
   margin: 0;
   padding: 0;
@@ -55,7 +33,6 @@ body {
 }
 
 .content-wrapper {
-  /* margin-top: 100px; */
   padding: 100px 0 40px 80px;
   flex: 1;              
   display: flex;

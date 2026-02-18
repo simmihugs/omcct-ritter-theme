@@ -5,29 +5,14 @@
     width: 100%;
     padding: 0px 0;
     z-index: 2000;
-    /* background-color: rgba(255, 255, 255, 0.9); */
-    /* border-top: 1px solid #b00000; */
     display: flex;
-    justify-content: center; /* Zentriert die "Box" */
-
+    justify-content: center;
 }
-/* .site-footer { */
-/*     background: none !important; /\* Das durchgehende Band verschwindet *\/ */
-/*     border: none; */
-/*     padding: 20px 0; */
-/*     width: 100%; */
-/*     display: flex; */
-/*     justify-content: center; /\* Zentriert die "Box" *\/ */
-/* } */
 
-/* Wir erstellen eine Box um den Inhalt */
 .footer-content-box {
-    background-color: rgba(255, 255, 255, 1.0); /* Weiß mit Transparenz */
+    background-color: rgba(255, 255, 255, 1.0);
     padding: 5px 300px;
-    /* border-radius: 15px; /\* Optionale Abrundung *\/ */
-    /* border: 1px solid #b00000; /\* Der rote Rand nur um den Text *\/ */
     border-top: 1px solid #b00000;
-    /* box-shadow: 0 4px 10px rgba(0,0,0,0.1); /\* Ein leichter Schatten lässt es edler wirken *\/ */
     display: inline-block;
     text-align: center;
 }

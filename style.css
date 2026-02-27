@@ -13,4 +13,5 @@ Version: 1.1
 
 @import url('css/footer.css');
 
-@import url('css/tafelrunde.css');
+@import url('css/pages/tafelrunde.css');
+@import url('css/pages/kontakt.css');

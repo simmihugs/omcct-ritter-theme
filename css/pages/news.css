@@ -1,0 +1,28 @@
+.news-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.news-timeline {
+    border-left: 2px solid #000;
+    padding-left: 30px;
+    position: relative;
+}
+
+.timeline-year {
+    background: #fff;
+    padding: 5px 10px;
+    border: 2px solid #000;
+    display: inline-block;
+    margin-left: -52px;
+    font-family: serif;
+}
+
+.year-navigation {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}

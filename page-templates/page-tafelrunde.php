@@ -46,13 +46,15 @@ get_header(); ?>
 				<span class="info-icon-circle">i</span>
 			</div>
 			<div id="info-content" class="info-content-box">
-				<h4>Die Ränge des Ordens</h4>
-				<ul>
-					<li><strong>Pilgrim:</strong> Der Beginn der Reise...</li>
-					<li><strong>Knappe:</strong> In Ausbildung...</li>
-					<li><strong>Ritter:</strong> Vollwertiges Mitglied...</li>
-				</ul>
-				<p>Hier kannst du den restlichen Text deines Kunden einfügen.</p>
+				<p>
+					Die Orden der ritterlichen Bünde in Österreich sind hierarchisch geordnet. Ebenso ist es im OMCCT bestellt. Als Pilgrim beginnt man die Suche und die ersten Treffen mit den Ordensrittern finden statt. Auf Empfehlung eines Recken wird nach einer geraumen Zeit um die Aufnahme als Knappe erbeten. Die Knappen Aufnahme erfolgt in einer ehrenvollen Zeremonie, meist im Rahmen des Jahreshauptkapitelums stattfindet.
+
+					Dabei bittet der künftige Leibrecke (in etwa so etwas wie ein Lehrmeister) um die Aufnahme des Pilgrims als Knappe. Der Knappe erhält dabei einen Waffenrock in den Ordensfarben und ein Barett, das die Farbe Purpur hat.
+
+					-
+
+					Beim Ritterschlag Profess Ritter erhalten der bzw. die Lady alle Insignien. Das heißt, den Mantel und das Ordenskreuz bzw. Ordens Scherpe.
+				</p>
 			</div>
 		</div>
 

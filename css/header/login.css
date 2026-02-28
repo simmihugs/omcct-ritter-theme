@@ -1,0 +1,42 @@
+.header-actions .action-btn {
+    background: #7a7a7a;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.header-actions .action-btn:hover {
+    background: #5a5a5a;
+    transform: translateY(-2px);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.recken-icon {
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.recken-icon .dashicons {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+    color: #ffffff; /* Weiß auf Rot */
+}
+
+/* /\* Goldener Schimmer, wenn man eingeloggt ist *\/ */
+/* .recken-icon.logged-in .dashicons { */
+/*     color: #ffcc00;  */
+/* } */
+
+.recken-icon:hover {
+    transform: scale(1.15);
+}

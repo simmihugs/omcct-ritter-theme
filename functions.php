@@ -99,3 +99,51 @@ add_action('save_post', function($post_id) {
     if (!isset($_POST['ritter_wappen_nonce']) || !wp_verify_nonce($_POST['ritter_wappen_nonce'], 'ritter_wappen_save')) return;
     if (isset($_POST['ritter_wappen'])) update_post_meta($post_id, 'ritter_wappen', $_POST['ritter_wappen']);
 });
+
+function omcct_enqueue_dashicons() {
+    wp_enqueue_style( 'dashicons' );
+}
+add_action( 'wp_enqueue_scripts', 'omcct_enqueue_dashicons' );
+
+function omcct_login_redirect( $redirect_to, $request, $user ) {
+    // Schickt alle (außer Admins) nach dem Login zur Startseite
+    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+        if ( in_array( 'administrator', $user->roles ) ) {
+            return $redirect_to;
+        } else {
+            return home_url();
+        }
+    }
+    return $redirect_to;
+}
+add_filter( 'login_redirect', 'omcct_login_redirect', 10, 3 );
+
+function omcct_login_styling() { ?>
+    <style type="text/css">
+        body.login { background-color: #f4f4f4; }
+        #login h1 a {
+            background-image: url(<?php echo get_template_directory_uri(); ?>/img/screenshot.png);
+            background-size: contain;
+            width: 100%;
+            height: 100px;
+        }
+        .login #loginwp { display: none; }
+        .wp-core-ui .button-primary {
+            background: #8b0000 !important; /* Dein Rot */
+            border-color: #660000 !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+        .login form {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'omcct_login_styling' );
+
+add_action('after_setup_theme', function() {
+    if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
+    }
+});

@@ -10,6 +10,15 @@ function omcct_login_redirect( $redirect_to, $request, $user ) {
     return $redirect_to;
 }
 
+function grossmeister_login_redirect($redirect_to, $request, $user) {
+    if (isset($user->roles) && is_array($user->roles)) {
+        if (in_array('editor', $user->roles)) {
+            return admin_url(); // Leitet direkt zum Dashboard (/wp-admin/)
+        }
+    }
+    return $redirect_to;
+}
+
 function omcct_login_styling() { ?>
     <style type="text/css">
         body.login { background-color: #f4f4f4; }
@@ -34,5 +43,5 @@ function omcct_login_styling() { ?>
 <?php }
 
 add_filter( 'login_redirect', 'omcct_login_redirect', 10, 3 );
-
+add_filter('login_redirect', 'grossmeister_login_redirect', 10, 3);
 add_action( 'login_enqueue_scripts', 'omcct_login_styling' );

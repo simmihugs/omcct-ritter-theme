@@ -79,5 +79,12 @@ get_header(); ?>
 			}
 		}
 	}
+
+	window.addEventListener('scroll', function() {
+		var content = document.getElementById("info-content");
+		if (content && content.classList.contains('active')) {
+			content.classList.remove('active');
+		}
+	}, { passive: true });
 </script>
 <?php get_footer(); ?>

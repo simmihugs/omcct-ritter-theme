@@ -40,7 +40,7 @@
 				</div>
 
 				<div class="logo-area">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/screenshot.png" alt="Wappen">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/wappen.png" alt="Wappen">
 				</div>
 			</div>
 		</div>

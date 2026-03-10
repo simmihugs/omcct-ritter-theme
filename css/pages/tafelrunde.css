@@ -1,111 +1,148 @@
-.tafelrunde-container {
+.ritter-card {
     display: flex;
-    gap: 40px;
-    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 30px;
+    background-image: url('../../img/pergament-bg.png'); 
+    background-size: cover;
 }
 
-.members-column {
-    flex: 2;
+.ritter-sidebar {
+    flex: 0 0 250px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-}
-
-.info-sidebar {
-    flex: 1;
-    position: sticky;
-    top: 120px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border: 1px solid #b00000;
-    border-radius: 5px;
-}
-
-.ritter-card {
-    background-image: url('../../img/pergament-bg.png');
-    /* background-color: #f4e4bc; */
-    /* border: 1px solid #d2b48c; */
-    /* box-shadow: 3px 3px 15px rgba(0,0,0,0.2); */
-    padding: 20px;
-    display: flex;
     gap: 20px;
-    border-radius: 2px;
+    align-items: center;
 }
 
 .ritter-photo img {
-    width: 200px;
+    width: 100%;
     height: auto;
-    border: 3px solid #b00000;
-}
-
-.ritter-details h2 {
-    margin-top: 0;
-    color: #b00000;
-    font-family: 'Georgia', serif;
-    border-bottom: 1px solid #b00000;
-}
-
-.ritter-card {
-    position: relative; /* Wichtig für die Positionierung des Wappens */
-}
-
-.ritter-wappen-overlay {
-    height: auto;
-    position: absolute;
-    left: 180px; /* Schiebt es genau zwischen Foto und Text */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    z-index: 10;
+    border: 3px solid #800000;
 }
 
 .ritter-wappen-img {
-  width: 200px;
+    max-width: 150px;
+    height: auto;
 }
 
-.global-info-dropdown {
-    position: relative;
-    margin-bottom: 20px;
-    font-family: serif;
+.ritter-main-content {
+    flex: 1;
+    text-align: left;
+}
+
+.ritter-main-content h2 {
+    color: #800000;
+    border-bottom: 2px solid #800000;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+
+@media (max-width: 768px) {
+    .ritter-card {
+        flex-direction: column;
+        align-items: center;
+    }
+    .ritter-sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+.global-info-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
 }
 
 .info-button {
     display: flex;
     align-items: center;
-    gap: 10px;
+    background: #800000;
+    color: white;
+    border-radius: 25px;
     cursor: pointer;
-    font-weight: bold;
-    border: 1px solid #000;
-    padding: 5px 15px;
-    background: #fff;
-    width: fit-content;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    padding: 5px;
 }
 
-.info-icon-circle {
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: #000;
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 22px;
+.info-label {
+    max-width: 0;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    padding-left: 0;
     font-size: 14px;
 }
 
+.info-button:hover {
+    padding: 5px 15px;
+}
+
+.info-button:hover .info-label {
+    max-width: 200px;
+    opacity: 1;
+    padding-right: 10px;
+}
+
+.info-icon-circle {
+    width: 35px;
+    height: 35px;
+    background: white;
+    color: #800000;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
 .info-content-box {
-    display: none; /* Standardmäßig versteckt */
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 200px;
-    background: #fdfaf3; /* Leichtes Pergament-Weiß */
-    border: 1px solid #630;
-    padding: 20px;
-    z-index: 1000;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: #fdfaf3;
+    border: 2px solid #800000;
+    padding: 30px;
+    z-index: 10001;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .info-content-box.active {
-    display: block; /* Wird per JS aktiviert */
+    display: block;
+}
+
+.info-overlay-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 10000;
+}
+
+.info-overlay-bg.active {
+    display: block;
+}
+
+.info-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #800000;
 }

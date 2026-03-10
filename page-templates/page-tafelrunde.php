@@ -13,19 +13,23 @@ get_header(); ?>
 			if ($ritter_query->have_posts()) :
 				while ($ritter_query->have_posts()) : $ritter_query->the_post(); ?>
 					<article class="ritter-card">
-						<div class="ritter-photo">
-							<?php the_post_thumbnail('medium'); ?>
+						<div class="ritter-sidebar">
+
+							<?php
+							$wappen_url = get_post_meta(get_the_ID(), 'ritter_wappen', true);
+							if ($wappen_url) : ?>
+								<div class="ritter-wappen-container">
+									<img src="<?php echo esc_url($wappen_url); ?>" class="ritter-wappen-img" alt="Wappen">
+								</div>
+							<?php endif; ?>
+
+							<div class="ritter-photo">
+								<?php the_post_thumbnail('medium', array('class' => 'ritter-portrait-img')); ?>
+							</div>
+
 						</div>
 
-						<?php
-						$wappen_url = get_post_meta(get_the_ID(), 'ritter_wappen', true);
-						if ($wappen_url) : ?>
-							<div class="ritter-wappen-container">
-								<img src="<?php echo esc_url($wappen_url); ?>" class="ritter-wappen-img">
-							</div>
-						<?php endif; ?>
-
-						<div class="ritter-details">
+						<div class="ritter-main-content">
 							<h2><?php the_title(); ?></h2>
 							<div class="ritter-bio">
 								<?php the_content(); ?>
@@ -40,12 +44,14 @@ get_header(); ?>
 			?>
 		</section>
 
-		<div class="global-info-dropdown">
+		<div class="global-info-container">
 			<div class="info-button" onclick="toggleInfoDropdown()">
-				<span>Mehr zu den Ordensrängen</span>
+				<span class="info-label">Mehr zu den Ordensrängen</span>
 				<span class="info-icon-circle">i</span>
 			</div>
 			<div id="info-content" class="info-content-box">
+				<div class="info-close" onclick="toggleInfoDropdown()">×</div>
+				<h3>Informationen zu den Ordensrängen</h3>
 				<p>
 					Die Orden der ritterlichen Bünde in Österreich sind hierarchisch geordnet. Ebenso ist es im OMCCT bestellt. Als Pilgrim beginnt man die Suche und die ersten Treffen mit den Ordensrittern finden statt. Auf Empfehlung eines Recken wird nach einer geraumen Zeit um die Aufnahme als Knappe erbeten. Die Knappen Aufnahme erfolgt in einer ehrenvollen Zeremonie, meist im Rahmen des Jahreshauptkapitelums stattfindet.
 
@@ -56,8 +62,8 @@ get_header(); ?>
 					Beim Ritterschlag Profess Ritter erhalten der bzw. die Lady alle Insignien. Das heißt, den Mantel und das Ordenskreuz bzw. Ordens Scherpe.
 				</p>
 			</div>
+			<div id="info-overlay-bg" class="info-overlay-bg" onclick="toggleInfoDropdown()"></div>
 		</div>
-
 	</div>
 </main>
 
@@ -67,7 +73,6 @@ get_header(); ?>
 		content.classList.toggle("active");
 	}
 
-	// Schließen, wenn man irgendwo anders hinklickt
 	window.onclick = function(event) {
 		if (!event.target.matches('.info-button') && !event.target.closest('.info-button')) {
 			var dropdowns = document.getElementsByClassName("info-content-box");
@@ -85,6 +90,8 @@ get_header(); ?>
 		if (content && content.classList.contains('active')) {
 			content.classList.remove('active');
 		}
-	}, { passive: true });
+	}, {
+		passive: true
+	});
 </script>
 <?php get_footer(); ?>

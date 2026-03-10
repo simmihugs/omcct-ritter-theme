@@ -1,68 +1,80 @@
 .news-container {
     display: flex;
-    gap: 40px;
+    gap: 2.5rem;
     max-width: 1000px;
     margin: 0 auto;
     position: relative;
 }
 
 .news-timeline {
-    border-left: 2px solid #000;
-    padding-left: 30px;
+    border-left: 2px solid var(--primary-red, #800000);
+    padding-left: 2.5rem;
+    margin-left: 2rem;
+    margin-top: 1.25rem;
     position: relative;
 }
 
 .timeline-year {
-    background: #fff;
-    padding: 5px 10px;
-    border: 2px solid #000;
+    scroll-margin-top: calc(var(--header-height, 100px) + 120px); 
+    
+    background: var(--primary-red, #800000);
+    color: #fff;
+    padding: 0.35rem 1rem;
     display: inline-block;
-    margin-left: -52px;
     font-family: serif;
+    border-radius: 2px;
+    
+    margin-left: calc(-2.5rem - 32px); 
+    
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 10;
+}
+
+.news-wrapper {
+    max-width: var(--main-max-width, 900px);
+    margin: 0 auto;
+    padding-top: calc(var(--header-height, 100px) + 2rem);
 }
 
 .year-navigation {
     position: sticky;
-    top: 100px;
+    top: var(--header-height, 100px);
     height: fit-content;
-}
-
-.news-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    padding-top: 100px;
+    padding-top: 1.25rem; 
 }
 
 .news-jump-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.625rem;
     justify-content: center;
-    margin-bottom: 40px;
-    padding: 15px;
+    margin-bottom: 2.5rem;
+    padding: 0.9375rem;
     background: #f9f9f9;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
     border-radius: 4px;
 }
 
 .jump-btn {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 15px;
-    background: white;
-    border: 1px solid #333;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9375rem;
+    background: #ffffff;
+    border: 1px solid #333333;
     text-decoration: none;
-    color: #333;
+    color: #333333;
     font-weight: bold;
     font-size: 0.9em;
     transition: all 0.2s ease;
+    white-space: nowrap; 
 }
 
 .jump-btn:hover {
-    background: #800000;
-    color: white;
-    border-color: #800000;
+    background: var(--primary-red, #800000);
+    color: #ffffff;
+    border-color: var(--primary-red, #800000);
 }
 
 .news-timeline {
@@ -71,84 +83,50 @@
     margin-left: 20px;
 }
 
-.timeline-year {
-    background: #800000;
-    color: white;
-    padding: 5px 15px;
-    display: inline-block;
-    margin-left: -52px;
-    margin-bottom: 20px;
-    font-family: serif;
-    border-radius: 2px;
+.news-timeline {
+    border-left: 2px solid var(--primary-red, #800000);
+    --timeline-gap: 1.875rem;
+    padding-left: var(--timeline-gap);
+    margin-left: 1.25rem; /* 20px */
+    position: relative;
 }
 
 .news-item {
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
     position: relative;
 }
 
 .news-item::before {
     content: "";
     position: absolute;
-    left: -37px;
-    top: 10px;
+    left: calc((var(--timeline-gap) * -1) - 9px); 
+    top: 0.625rem; /* 10px */
     width: 12px;
     height: 12px;
     background: white;
-    border: 2px solid #800000;
+    border: 2px solid var(--primary-red, #800000);
     border-radius: 50%;
+    z-index: 2;
 }
 
-.news-nav-sticky {
-    position: fixed;
-    top: 120px;
-    z-index: 99;
-    background-color: #ffffff;
-    padding: 15px 0;
-    border-bottom: 2px solid #800000;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-    width: 900px;
+ .news-nav-sticky { 
+     position: fixed; 
+     top: 120px; 
+     z-index: 99; 
+     background-color: #ffffff; 
+     padding: 15px 0; 
+     border-bottom: 2px solid #800000; 
+     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); 
+     width: 900px; 
+ }
+
+
+.news-jump-nav { 
+    display: flex; 
+    justify-content: flex-start; 
+    gap: 12px; 
+    max-width: var(--main-max-width, 1000px); 
+    margin: 0 auto; 
+    padding: 0 20px;
 }
 
-.news-jump-nav {
-    display: flex;
-    justify-content: flex-start;
-    gap: 12px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.timeline-year {
-  scroll-margin-top: 240px;  
-    
-    background: #800000;
-    color: white;
-    padding: 5px 15px;
-    display: inline-block;
-    margin-left: -52px;
-}
-
-.jump-btn {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 6px 12px;
-    background: #fff;
-    border: 1px solid #333;
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.jump-btn:hover {
-    background: #800000;
-    color: #fff;
-}
-
-.news-timeline {
-    border-left: 2px solid #800000;
-    padding-left: 40px;
-    margin-left: 30px;
-    margin-top: 20px;
-}

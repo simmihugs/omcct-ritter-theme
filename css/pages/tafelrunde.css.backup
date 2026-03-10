@@ -1,0 +1,148 @@
+.ritter-card {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 30px;
+    background-image: url('../../img/pergament-bg.png'); 
+    background-size: cover;
+}
+
+.ritter-sidebar {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.ritter-photo img {
+    width: 100%;
+    height: auto;
+    border: 3px solid #800000;
+}
+
+.ritter-wappen-img {
+    max-width: 150px;
+    height: auto;
+}
+
+.ritter-main-content {
+    flex: 1;
+    text-align: left;
+}
+
+.ritter-main-content h2 {
+    color: #800000;
+    border-bottom: 2px solid #800000;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+
+@media (max-width: 768px) {
+    .ritter-card {
+        flex-direction: column;
+        align-items: center;
+    }
+    .ritter-sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+.global-info-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+}
+
+.info-button {
+    display: flex;
+    align-items: center;
+    background: #800000;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.info-label {
+    max-width: 0;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    padding-left: 0;
+    font-size: 14px;
+}
+
+.info-button:hover {
+    padding: 5px 15px;
+}
+
+.info-button:hover .info-label {
+    max-width: 200px;
+    opacity: 1;
+    padding-right: 10px;
+}
+
+.info-icon-circle {
+    width: 35px;
+    height: 35px;
+    background: white;
+    color: #800000;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.info-content-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: #fdfaf3;
+    border: 2px solid #800000;
+    padding: 30px;
+    z-index: 10001;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.info-content-box.active {
+    display: block;
+}
+
+.info-overlay-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 10000;
+}
+
+.info-overlay-bg.active {
+    display: block;
+}
+
+.info-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #800000;
+}

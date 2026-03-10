@@ -1,0 +1,29 @@
+/* Den Kalender-Header anpassen */
+.tribe-events-header__title {
+    display: none !important; /* Wir haben ja oben schon unser Ordens-Archiv H1 */
+}
+
+/* Aktueller Tag und Events in deinem Rot */
+.tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date {
+    background-color: #8b0000 !important;
+    color: #fff !important;
+    border-radius: 50%;
+}
+
+/* Die Punkte/Marker für Events */
+.tribe-events-calendar-month__day-event-dot {
+    background-color: #8b0000 !important;
+}
+
+/* Die Abo-Buttons (Google / iCal) wie deine ritterlichen Buttons stylen */
+.tribe-events-c-subscribe-dropdown__button {
+    background-color: #f4f4f4 !important;
+    border: 2px solid #8b0000 !important;
+    color: #333 !important;
+    font-weight: bold !important;
+}
+
+.tribe-events-c-subscribe-dropdown__button:hover {
+    background-color: #8b0000 !important;
+    color: #fff !important;
+}

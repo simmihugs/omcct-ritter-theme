@@ -1,61 +1,106 @@
 .galerie-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 40px 20px;
+    /* Nutzt auto-fill statt auto-fit, damit bei nur 1-2 Bildern die Karten nicht riesig werden */
+    grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr)); /* 280px */
+    gap: 2rem;
+    padding: 2.5rem 1.25rem;
 }
 
 .galerie-card {
     text-decoration: none;
-    color: #333;
-    transition: transform 0.2s;
+    color: var(--text-dark, #333);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
 }
 
 .galerie-card:hover {
     transform: translateY(-5px);
 }
 
+.galerie-thumbnail {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px; /* Ein wenig weicher für den modernen Look */
+    border: 1px solid #ccc;
+    height: 12.5rem; /* 200px */
+}
+
 .galerie-thumbnail img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
-    border: 1px solid #ccc;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.galerie-card:hover .galerie-thumbnail img {
+    transform: scale(1.05); /* Leichter Zoom-Effekt beim Hover */
 }
 
 .galerie-info h3 {
     font-size: 1.1rem;
-    margin: 10px 0 5px 0;
+    margin: 0.625rem 0 0.3rem 0;
     line-height: 1.3;
+    color: var(--primary-red, #8B0000);
 }
 
+/* Back-Button Navigation */
 .back-to-gallery-nav {
-    margin: 20px 0 30px 0;
+    margin: 1.25rem 0 2rem 0;
 }
 
 .btn-ritter-back {
     display: inline-flex;
     align-items: center;
-    padding: 10px 22px;
-    background-color: #ffffff;
-    border: 2px solid #8B0000;
-    color: #8B0000;
+    padding: 0.625rem 1.375rem;
+    background-color: var(--bg-white, #ffffff);
+    border: 2px solid var(--primary-red, #8B0000);
+    color: var(--primary-red, #8B0000);
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     letter-spacing: 1px;
     transition: all 0.3s ease;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
 .btn-ritter-back:hover {
-    background-color: #8B0000;
+    background-color: var(--primary-red, #8B0000);
     color: #ffffff;
     transform: translateX(-5px);
     box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
 }
 
 .btn-ritter-back span {
-    margin-right: 12px;
+    margin-right: 0.75rem;
     font-size: 1.2rem;
+}
+
+/* --- Responsive & OS Coping --- */
+
+@media (max-width: 768px) {
+    .galerie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); /* Etwas schmaler auf Mobile */
+        gap: 1.25rem;
+        padding: 1.25rem 10px;
+    }
+
+    .galerie-thumbnail {
+        height: 10rem; /* Kürzere Bilder auf dem Handy für mehr Übersicht */
+    }
+
+    .btn-ritter-back {
+        width: 100%; /* Button volle Breite auf Mobile für bessere Klickbarkeit */
+        justify-content: center;
+    }
+}
+
+/* Support für Safari (Object-fit Fix) */
+@supports not (object-fit: cover) {
+    .galerie-thumbnail img {
+        height: auto;
+        min-height: 100%;
+    }
 }

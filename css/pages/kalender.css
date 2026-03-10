@@ -1,29 +1,80 @@
 /* Den Kalender-Header anpassen */
 .tribe-events-header__title {
-    display: none !important; /* Wir haben ja oben schon unser Ordens-Archiv H1 */
+    display: none !important; 
 }
 
-/* Aktueller Tag und Events in deinem Rot */
+/* 1. Responsives Layout für den Kalender-Container */
+.tribe-common {
+    font-family: inherit !important;
+    /* Nutzt die Header-Variable für den Abstand */
+    padding-top: 1rem;
+}
+
+/* 2. Aktueller Tag in deinem Ordens-Rot */
 .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date {
-    background-color: #8b0000 !important;
-    color: #fff !important;
+    background-color: var(--primary-red, #8b0000) !important;
+    color: #ffffff !important;
+    /* Nutzt relative Einheiten für den Kreis */
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
     border-radius: 50%;
 }
 
-/* Die Punkte/Marker für Events */
+/* 3. Die Event-Marker (Punkte) */
 .tribe-events-calendar-month__day-event-dot {
-    background-color: #8b0000 !important;
+    background-color: var(--primary-red, #8b0000) !important;
+    width: 8px;
+    height: 8px;
 }
 
-/* Die Abo-Buttons (Google / iCal) wie deine ritterlichen Buttons stylen */
+/* 4. Abo-Buttons (Google / iCal) - Anpassung an dein Ritter-Design */
 .tribe-events-c-subscribe-dropdown__button {
     background-color: #f4f4f4 !important;
-    border: 2px solid #8b0000 !important;
-    color: #333 !important;
+    border: 2px solid var(--primary-red, #8b0000) !important;
+    color: #333333 !important;
     font-weight: bold !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+    font-size: 0.875rem !important;
 }
 
 .tribe-events-c-subscribe-dropdown__button:hover {
-    background-color: #8b0000 !important;
-    color: #fff !important;
+    background-color: var(--primary-red, #8b0000) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* --- MOBILE & OS COPING --- */
+
+@media (max-width: 768px) {
+    /* Kalender-Gitter auf Mobile kompakter machen */
+    .tribe-events-calendar-month__table {
+        display: block; /* Besseres Scrolling auf kleinen Screens */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Buttons auf dem Handy vergrößern für bessere Bedienbarkeit */
+    .tribe-events-c-subscribe-dropdown__button {
+        width: 100%;
+        display: flex !important;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    /* Event-Titel in der mobilen Liste */
+    .tribe-events-calendar-month__calendar-event-title {
+        font-size: 0.9rem !important;
+        line-height: 1.2;
+    }
+}
+
+/* Safari Fix für runde Datumsanzeigen */
+.tribe-events-calendar-month__day-date {
+    -webkit-font-smoothing: antialiased;
 }

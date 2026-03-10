@@ -1,67 +1,93 @@
+:root {
+    /* Magic Numbers durch Variablen ersetzen */
+    --header-height: 100px;
+    --content-padding-top: 40px;
+    --sidebar-width: 160px;
+    --main-max-width: 1100px;
+    
+    /* Farben & Design */
+    --primary-red: #800000;
+    --bg-white: #ffffff;
+    --text-dark: #333333;
+}
+
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  height: 90%;
+    margin: 0;
+    padding: 0;
+    /* Nutze min-height für bessere Stabilität auf verschiedenen Geräten */
+    min-height: 100vh;
+    scroll-behavior: smooth; /* Sanftes Scrollen für alle modernen Browser */
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  background-image: url('../img/wappen_30.png');
-  background-position: center 200px;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-image: url('../img/wappen_30.png');
+    /* Relative Position statt fixer Pixel */
+    background-position: center calc(var(--header-height) + 100px);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: serif; /* Passend zum Ritter-Thema */
 }
 
 .main-container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-  position: relative;
-
-  flex: 1;             
-  display: flex;        
-  flex-direction: column;  
+    width: 95%; /* Flexibler für kleinere Bildschirme */
+    max-width: var(--main-max-width);
+    margin: 0 auto;
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .content-wrapper {
-  padding: 100px 0 40px 80px;
-  flex: 1;              
-  display: flex;
-  flex-direction: column;  
+    /* Padding abhängig von der Header-Variable */
+    padding: var(--header-height) 0 40px 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Die Ranke: Fixiert auf Desktop, ausgeblendet auf Mobile */
 .fixed-sidebar-decoration {
-  position: fixed;
-  top: 100px; 
-  left: calc(50% - 550px);
-  width: 160px;
-  height: calc(100vh - 100px);
-  background-image: url('../img/ranke.png');
-  background-repeat: repeat-y;
-  z-index: 900;
+    position: fixed;
+    top: var(--header-height);
+    /* Zentrierung basierend auf der max-width des Containers */
+    left: calc(50% - (var(--main-max-width) / 2));
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
+    background-image: url('../img/ranke.png');
+    background-repeat: repeat-y;
+    z-index: 90; /* Unter Header/Nav, aber über Content-Hintergrund */
 }
 
+/* Der eigentliche Inhaltsbereich */
 .site-content {
-  flex-grow: 1;
-  padding: 20px 40px 40px 40px;
-  max-width: 1100px;
+    flex-grow: 1;
+    padding: 20px 40px;
+    /* Platz für die Ranke lassen */
+    margin-left: 80px; 
 }
 
-.page-layout {
-  display: flex;
-  align-items: flex-start;
-  padding-top: 40px;
-  background-image: url('../img/wappen-bg.png');
-  background-position: center 100px;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+/* --- MOBILE ANPASSUNGEN --- */
+@media (max-width: 1024px) {
+    .fixed-sidebar-decoration {
+        display: none; /* Ranke stört auf kleinen Schermen */
+    }
+    
+    .site-content {
+        margin-left: 0; /* Content nutzt volle Breite */
+        padding: 20px;
+    }
+    
+    body {
+        /* Hintergrundbild auf Mobile verkleinern */
+        background-size: 50%;
+        background-position: center 150px;
+    }
 }

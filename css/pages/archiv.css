@@ -1,33 +1,35 @@
 /* Container-Fixing */
 .archiv-container {
-    max-width: 1200px;
+    max-width: var(--main-max-width, 1200px);
     margin: 0 auto;
     position: relative;
-    padding-top: 100px !important;
+    /* Nutzt die Header-Variable statt !important 100px */
+    padding-top: calc(var(--header-height, 100px) + 20px);
 }
 
-/* Fixierter Header-Bereich (Überschrift + Jump-Links) */
+/* Fixierter Header-Bereich */
 .archiv-sticky-header {
-    position: -webkit-sticky;
-    position: fixed;
-    top: 120px;
-    background: #fff; /* Damit der Text beim Scrollen nicht durchscheint */
+    position: sticky; /* Modernes Sticky statt Fixed, um im Fluss zu bleiben */
+    top: var(--header-height, 100px);
+    background: #ffffff;
     z-index: 100;
-    padding: 20px 0;
-    border-bottom: 2px solid #8b0000; /* Dunkelrote Trennlinie */
+    padding: 1.25rem 0;
+    border-bottom: 2px solid var(--primary-red, #8b0000);
+    /* Coping: Verhindert Flackern in Safari beim Scrollen */
+    -webkit-backface-visibility: hidden;
 }
 
 .archiv-sticky-header h1 {
-    margin: 0 0 15px 0;
-    color: #8b0000;
-    font-size: 2.2rem;
+    margin: 0 0 1rem 0;
+    color: var(--primary-red, #8b0000);
+    font-size: clamp(1.5rem, 5vw, 2.2rem); /* Skaliert Schriftgröße */
 }
 
 /* Die Sprungmarken (Jump-Links) */
 .archiv-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 0.75rem 1rem;
 }
 
 .archiv-nav a {
@@ -36,62 +38,84 @@
     font-weight: bold;
     display: flex;
     align-items: center;
-    gap: 5px;
-    padding: 8px 12px;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 4px;
     background: #f4f4f4;
+    font-size: 0.875rem;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .archiv-nav a:hover {
-    background: #8b0000;
-    color: #fff;
+    background: var(--primary-red, #8b0000);
+    color: #ffffff;
 }
 
 /* Content Bereich */
 .archiv-content-scroll {
-  margin-top: 50px !important;
-  display: block;
-  position: relative;
-
-}
-.archiv-section {
-    /* Damit beim Klick auf "Knappenleitfaden" die Überschrift nicht 
-       hinter dem starren Header verschwindet */
-    scroll-margin-top: 200px; 
-    padding: 40px 0;
+    margin-top: 2rem;
+    display: block;
+    position: relative;
 }
 
 .archiv-section {
-    padding: 40px 0;
+    /* Dynamischer Sprungpunkt: Header + Sticky-Nav-Höhe */
+    scroll-margin-top: calc(var(--header-height, 100px) + 150px); 
+    padding: 2.5rem 0;
     border-bottom: 1px solid #eee;
 }
 
 /* Die Artikel-Einträge */
 .archiv-article-entry {
-    background: #fff;
-    border-left: 5px solid #8b0000;
-    padding: 20px;
-    margin: 20px 0;
+    background: #ffffff;
+    border-left: 5px solid var(--primary-red, #8b0000);
+    padding: 1.25rem;
+    margin: 1.25rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .archiv-article-entry h3 {
-    color: #8b0000;
+    color: var(--primary-red, #8b0000);
     margin-top: 0;
+    font-size: 1.25rem;
 }
 
-/* Download-Buttons (WordPress Standard-Buttons überschreiben) */
+/* Download-Buttons (WP-Blöcke) */
 .wp-block-file__button {
-    background-color: #8b0000 !important;
-    color: white !important;
+    background-color: var(--primary-red, #8b0000) !important;
+    color: #ffffff !important;
     border-radius: 4px !important;
-    padding: 10px 20px !important;
+    padding: 0.625rem 1.25rem !important;
     text-decoration: none !important;
     font-weight: bold;
+    transition: background 0.2s;
 }
 
 .wp-block-file__button:hover {
-    background-color: #333 !important;
+    background-color: #333333 !important;
 }
 
+/* --- MOBILE & BROWSER COPING --- */
+
+@media (max-width: 768px) {
+    .archiv-sticky-header {
+        position: relative; /* Auf kleinen Handys ist Sticky oft störend */
+        top: 0;
+        padding: 10px 0;
+    }
+    
+    .archiv-section {
+        scroll-margin-top: 20px; /* Sprungpunkt anpassen, wenn Header nicht mehr fix ist */
+        padding: 20px 0;
+    }
+
+    .archiv-nav {
+        justify-content: center;
+    }
+
+    .archiv-article-entry {
+        padding: 15px;
+        border-left-width: 3px;
+    }
+}

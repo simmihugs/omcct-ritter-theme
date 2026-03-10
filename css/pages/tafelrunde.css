@@ -1,71 +1,69 @@
+/* Die Ritter-Karte (Mitglieder-Profil) */
 .ritter-card {
     display: flex;
-    gap: 30px;
-    margin-bottom: 50px;
-    padding: 30px;
+    gap: 2rem; /* 30px -> rem */
+    margin-bottom: 3.125rem; /* 50px */
+    padding: 2rem;
+    /* Pergament-Hintergrund */
     background-image: url('../../img/pergament-bg.png'); 
     background-size: cover;
+    background-position: center;
 }
 
+/* Linke Spalte: Foto & Wappen */
 .ritter-sidebar {
-    flex: 0 0 250px;
+    flex: 0 0 15.625rem; /* 250px */
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
     align-items: center;
 }
 
 .ritter-photo img {
     width: 100%;
     height: auto;
-    border: 3px solid #800000;
+    border: 3px solid var(--primary-red, #800000);
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
 }
 
 .ritter-wappen-img {
-    max-width: 150px;
+    max-width: 9.375rem; /* 150px */
     height: auto;
+    /* Coping: Wappen schwebt leicht */
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
 }
 
+/* Rechte Spalte: Textinhalt */
 .ritter-main-content {
     flex: 1;
     text-align: left;
 }
 
 .ritter-main-content h2 {
-    color: #800000;
-    border-bottom: 2px solid #800000;
-    padding-bottom: 10px;
+    color: var(--primary-red, #800000);
+    border-bottom: 2px solid var(--primary-red, #800000);
+    padding-bottom: 0.625rem;
     margin-top: 0;
+    font-family: serif;
 }
 
-
-@media (max-width: 768px) {
-    .ritter-card {
-        flex-direction: column;
-        align-items: center;
-    }
-    .ritter-sidebar {
-        flex: 0 0 auto;
-        width: 100%;
-    }
-}
-
+/* --- Globaler Info-Button (Floating Action Button) --- */
 .global-info-container {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 1.875rem;
+    right: 1.875rem;
     z-index: 9999;
 }
 
 .info-button {
     display: flex;
     align-items: center;
-    background: #800000;
+    background: var(--primary-red, #800000);
     color: white;
     border-radius: 25px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     padding: 5px;
 }
@@ -76,32 +74,35 @@
     opacity: 0;
     transition: all 0.3s ease;
     padding-left: 0;
-    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
 }
 
 .info-button:hover {
-    padding: 5px 15px;
+    padding-right: 1.25rem;
 }
 
 .info-button:hover .info-label {
-    max-width: 200px;
+    max-width: 12.5rem;
     opacity: 1;
-    padding-right: 10px;
+    padding-left: 0.625rem;
 }
 
 .info-icon-circle {
     width: 35px;
     height: 35px;
     background: white;
-    color: #800000;
+    color: var(--primary-red, #800000);
     border-radius: 50%;
-    text-align: center;
-    line-height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
     flex-shrink: 0;
 }
 
+/* --- Info-Box (Modal) --- */
 .info-content-box {
     display: none;
     position: fixed;
@@ -109,40 +110,74 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    max-width: 500px;
-    background: #fdfaf3;
-    border: 2px solid #800000;
-    padding: 30px;
+    max-width: 31.25rem; /* 500px */
+    background: #fdfaf3; /* Heller Pergament-Ton */
+    border: 3px solid var(--primary-red, #800000);
+    padding: 2rem;
     z-index: 10001;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    max-height: 80vh;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    max-height: 85vh;
     overflow-y: auto;
+    /* Coping: Sanftes Einblenden */
+    animation: fadeIn 0.3s ease-out;
 }
 
-.info-content-box.active {
-    display: block;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -45%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
 }
+
+.info-content-box.active { display: block; }
 
 .info-overlay-bg {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.75);
     z-index: 10000;
+    backdrop-filter: blur(3px); /* Moderner Blur-Effekt */
 }
 
-.info-overlay-bg.active {
-    display: block;
-}
+.info-overlay-bg.active { display: block; }
 
 .info-close {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
+    top: 0.625rem;
+    right: 0.9375rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    color: #800000;
+    color: var(--primary-red, #800000);
+    font-weight: bold;
+}
+
+/* --- Mobile View Coping --- */
+@media (max-width: 768px) {
+    .ritter-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.25rem;
+        gap: 1.5rem;
+    }
+    
+    .ritter-sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 18.75rem; /* 300px */
+    }
+
+    .ritter-main-content {
+        text-align: center;
+    }
+
+    .global-info-container {
+        bottom: 1.25rem;
+        right: 1.25rem;
+    }
+
+    /* Auf Mobile das Label im Info-Button permanent verstecken? 
+       Oder nur Icon lassen für weniger Platzverbrauch: */
+    .info-button:hover .info-label {
+        display: none;
+    }
 }

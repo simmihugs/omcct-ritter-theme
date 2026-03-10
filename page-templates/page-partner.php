@@ -8,7 +8,7 @@ get_header(); ?>
 	<div class="partner-grid">
 		<?php
 		$partner_query = new WP_Query(array(
-			'category_name' => 'partner',
+			'post_type' => 'partner',
 			'posts_per_page' => -1,
 			'orderby' => 'title',
 			'order' => 'ASC'
@@ -29,18 +29,15 @@ get_header(); ?>
 
 					<div class="partner-actions">
 						<?php
-						// 1. Die Werte aus der neuen Meta-Box abrufen
 						$website = get_post_meta(get_the_ID(), 'website_url', true);
 						$email = get_post_meta(get_the_ID(), 'kontakt_email', true);
 
-						// 2. Prüfen: Wenn Website vorhanden, Button anzeigen
 						if (!empty($website)) : ?>
 							<a href="<?php echo esc_url($website); ?>" class="action-btn" title="Website besuchen" target="_blank">
 								<span>&#127760;</span> </a>
 						<?php endif; ?>
 
 						<?php
-						// 3. Prüfen: Wenn E-Mail vorhanden, Button anzeigen
 						if (!empty($email)) : ?>
 							<a href="mailto:<?php echo antispambot($email); ?>" class="action-btn" title="E-Mail schreiben">
 								<span>&#9993;</span> </a>

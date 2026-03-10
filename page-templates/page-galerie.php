@@ -6,7 +6,7 @@ get_header(); ?>
     <div class="galerie-grid">
         <?php
         $args = array(
-            'category_name' => 'galerie',
+			'post_type' => 'galerie',
             'posts_per_page' => -1,
             'orderby' => 'date',
             'order' => 'DESC'

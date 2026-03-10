@@ -3,7 +3,7 @@
 get_header(); ?>
 
 <div class="container">
-	<h1 class="entry-title">Befreundete Freundesbünde</h1>
+	<h1 class="entry-title">Partner und Freundesbünde</h1>
 
 	<div class="partner-grid">
 		<?php

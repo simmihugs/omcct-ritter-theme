@@ -24,7 +24,7 @@ function register_galerie_post_type() {
         'menu_position'      => 7,
         'supports'           => array('title', 'editor', 'thumbnail'),
         'show_in_rest'       => true,
-        'rewrite'            => array('slug' => 'galerie'),
+		'rewrite'            => array('slug' => 'galerie-beitrag', 'with_front' => false),
     );
 
     register_post_type('galerie', $args);

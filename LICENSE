@@ -672,3 +672,10 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
+
+---------------------------------------------------------------------------
+THIRD-PARTY ASSETS: CANTERBURY FONT
+---------------------------------------------------------------------------
+The Canterbury font (located in /fonts/canterbury/) is included in this 
+theme. Its use is governed by its own license terms as provided by the 
+author (see /fonts/canterbury/1001fonts-canterbury-eula.txt).

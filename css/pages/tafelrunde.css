@@ -1,18 +1,15 @@
-/* Die Ritter-Karte (Mitglieder-Profil) */
 .ritter-card {
     display: flex;
-    gap: 2rem; /* 30px -> rem */
-    margin-bottom: 3.125rem; /* 50px */
+    gap: 2rem;
+    margin-bottom: 3.125rem;
     padding: 2rem;
-    /* Pergament-Hintergrund */
     background-image: url('../../img/pergament-bg.png'); 
     background-size: cover;
     background-position: center;
 }
 
-/* Linke Spalte: Foto & Wappen */
 .ritter-sidebar {
-    flex: 0 0 15.625rem; /* 250px */
+    flex: 0 0 15.625rem;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
@@ -27,13 +24,11 @@
 }
 
 .ritter-wappen-img {
-    max-width: 9.375rem; /* 150px */
+    max-width: 9.375rem;
     height: auto;
-    /* Coping: Wappen schwebt leicht */
     filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
 }
 
-/* Rechte Spalte: Textinhalt */
 .ritter-main-content {
     flex: 1;
     text-align: left;
@@ -44,10 +39,10 @@
     border-bottom: 2px solid var(--primary-red, #800000);
     padding-bottom: 0.625rem;
     margin-top: 0;
-    font-family: serif;
+    font-family: 'Canterbury', serif;
+    font-size: 3.2rem;
 }
 
-/* --- Globaler Info-Button (Floating Action Button) --- */
 .global-info-container {
     position: fixed;
     bottom: 1.875rem;
@@ -102,7 +97,6 @@
     flex-shrink: 0;
 }
 
-/* --- Info-Box (Modal) --- */
 .info-content-box {
     display: none;
     position: fixed;
@@ -110,15 +104,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    max-width: 31.25rem; /* 500px */
-    background: #fdfaf3; /* Heller Pergament-Ton */
+    max-width: 31.25rem;
+    background: #fdfaf3;
     border: 3px solid var(--primary-red, #800000);
     padding: 2rem;
     z-index: 10001;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     max-height: 85vh;
     overflow-y: auto;
-    /* Coping: Sanftes Einblenden */
     animation: fadeIn 0.3s ease-out;
 }
 
@@ -136,7 +129,7 @@
     width: 100%; height: 100%;
     background: rgba(0,0,0,0.75);
     z-index: 10000;
-    backdrop-filter: blur(3px); /* Moderner Blur-Effekt */
+    backdrop-filter: blur(3px);
 }
 
 .info-overlay-bg.active { display: block; }
@@ -151,7 +144,6 @@
     font-weight: bold;
 }
 
-/* --- Mobile View Coping --- */
 @media (max-width: 768px) {
     .ritter-card {
         flex-direction: column;
@@ -163,7 +155,7 @@
     .ritter-sidebar {
         flex: 0 0 auto;
         width: 100%;
-        max-width: 18.75rem; /* 300px */
+        max-width: 18.75rem;
     }
 
     .ritter-main-content {
@@ -175,8 +167,6 @@
         right: 1.25rem;
     }
 
-    /* Auf Mobile das Label im Info-Button permanent verstecken? 
-       Oder nur Icon lassen für weniger Platzverbrauch: */
     .info-button:hover .info-label {
         display: none;
     }

@@ -1,5 +1,4 @@
 .main-navigation {
-  /*flex-grow: 1;*/
   display: flex !important;
   justify-content: center;
   margin: 0 20px;
@@ -8,7 +7,6 @@
 
 .nav-list {
   display: flex !important;
-  /* flex-direction: row !important; */
   flex-wrap: wrap !important;
   justify-content: flex-start;
   list-style: none;
@@ -18,19 +16,14 @@
   max-width: 1500px;
 }
 
-/* .nav-list li { */
-/*   display: inline-block; */
-/* } */
 .nav-list li {
   display: block;
 }
 
-/* Versteckt Archiv & Kalendarium für Gäste */
 .nav-list li.recken-only {
     display: none !important;
 }
 
-/* Zeigt sie nur an, wenn der Body die Klasse 'logged-in' hat */
 body.logged-in .nav-list li.recken-only {
     display: block !important;
 }

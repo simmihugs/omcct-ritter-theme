@@ -3,7 +3,7 @@ Theme Name: OMCCT Ritter Theme
 Author: Simmi
 Description: Modulare Struktur für den Ritterorden.
 
-Version: 1.2.0
+Version: 1.2.1
 */
 
 @import url('css/layout-base.css');
@@ -25,9 +25,10 @@ Version: 1.2.0
 
 /* Mobile */
 @import url('css/layout-mobile.css');
-@import url('css/header/mobile.css');
+@import url('css/header/navigation-mobile.css');
 @import url('css/footer-mobile.css');
 @import url('css/pages/news-mobile.css');
 @import url('css/pages/partner-mobile.css');
 @import url('css/pages/archiv-mobile.css');
 @import url('css/pages/tafelrunde-mobile.css');
+

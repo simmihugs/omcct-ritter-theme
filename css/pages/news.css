@@ -100,7 +100,7 @@
     content: "";
     position: absolute;
     left: calc((var(--timeline-gap) * -1) - 9px); 
-    top: 0.625rem; /* 10px */
+    top: 0.625rem;
     width: 12px;
     height: 12px;
     background: white;

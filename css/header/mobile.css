@@ -1,29 +1,28 @@
-/* Hilfsklasse für Desktop-Elemente */
 @media (max-width: 1024px) {
     .hide-mobile { display: none !important; }
     
     .site-header {
-        padding-top: 0; /* Weißer Rand oben weg */
+        padding-top: 0;
     }
 
     .red-stripe {
-        margin-top: 0; /* Roter Streifen klebt ganz oben */
-        height: 60px; /* Etwas schmaler für Mobil */
+        margin-top: 0;
+        height: 60px;
     }
 
     .header-container {
-        justify-content: space-between; /* Wappen links, Hamburger rechts */
+        justify-content: space-between;
         width: 100%;
         padding: 0 15px;
     }
 
     .logo-area {
         flex: 0 0 auto;
-        order: 1; /* Ganz links */
+        order: 1;
     }
 
     .logo-area img {
-        height: 40px; /* Kleineres Wappen mobil */
+        height: 40px;
     }
 
     .branding {
@@ -34,53 +33,79 @@
 
     .mobile-menu-toggle {
         display: block;
-        order: 3; /* Ganz rechts */
+        order: 3;
         background: none;
         border: none;
         cursor: pointer;
         padding: 10px;
     }
 
-    /* Simpler Hamburger-Stil (3 Striche) */
-    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    .mobile-menu-toggle {
+        display: block;
+        order: 3;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 15px;
+        position: relative;
+        height: 40px;
+        width: 40px;
+    }
+
+    .hamburger-inner {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 auto;
+    }
+
+    .hamburger-inner, 
+    .hamburger-inner::before, 
+    .hamburger-inner::after {
         width: 25px;
         height: 2px;
         background-color: white;
         display: block;
         transition: 0.3s;
     }
-    .hamburger-inner::before, .hamburger-inner::after { content: ""; position: absolute; }
+
+    .hamburger-inner::before, 
+    .hamburger-inner::after { 
+        content: ""; 
+        position: absolute; 
+        left: 0;
+    }
+
     .hamburger-inner::before { top: -8px; }
     .hamburger-inner::after { bottom: -8px; }
 }
 
-/* Overlay Styling */
 .mobile-menu-overlay {
     position: fixed;
-    top: 60px; /* Direkt unter dem roten Streifen */
+    top: 40px;
     left: 0;
     width: 100%;
-    height: 0; /* Startzustand: Geschlossen */
-    background: rgba(128, 0, 0, 0.95); /* Dein primär-rot mit Transparenz */
+    height: 0;
+    background: rgba(128, 0, 0, 1.0);
     z-index: 999;
     overflow: hidden;
     transition: height 0.4s ease;
 }
 
 .mobile-menu-overlay.active {
-    height: 70vh; /* 2/3 der Höhe wie gewünscht */
+    height: 50vh;
 }
 
 .mobile-nav-list {
     list-style: none;
-    padding: 20px;
-    text-align: center;
+    padding: 10px;
+    text-align: left;
 }
 
 .mobile-nav-list li a {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     text-decoration: none;
     display: block;
-    padding: 15px 0;
+    padding: 10px 0;
 }

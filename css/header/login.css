@@ -1,21 +1,19 @@
 .header-actions {
     display: flex;
     align-items: center;
-    /* Nutzt relative Einheiten statt fixer 15px */
     margin-left: 1rem; 
-    gap: 0.75rem; /* Sauberer Abstand zwischen den Icons/Buttons */
+    gap: 0.75rem;
 }
 
 .header-actions .action-btn {
     background: #7a7a7a;
     color: var(--bg-white, white);
-    /* Flexibles Padding: Oben/Unten fest, Seite passt sich an */
     padding: 0.625rem 0.75rem; 
     border-radius: 4px;
     display: flex;
     align-items: center;
     text-decoration: none;
-    font-size: 0.875rem; /* Ca. 14px */
+    font-size: 0.875rem;
     transition: all 0.2s ease;
 }
 
@@ -33,7 +31,6 @@
 }
 
 .recken-icon .dashicons {
-    /* Wir nutzen eine Variable für die Icon-Größe */
     --icon-size: 28px;
     font-size: var(--icon-size);
     width: var(--icon-size);
@@ -45,7 +42,6 @@
     transform: scale(1.15);
 }
 
-/* --- Mobile View Support --- */
 @media (max-width: 768px) {
     .header-actions {
         margin-left: 0;
@@ -53,11 +49,11 @@
     }
     
     .header-actions .action-btn {
-        padding: 8px; /* Etwas kompakter auf dem Handy */
+        padding: 8px;
         font-size: 12px;
     }
     
     .recken-icon .dashicons {
-        --icon-size: 24px; /* Icons leicht verkleinern für mehr Platz */
+        --icon-size: 24px;
     }
 }

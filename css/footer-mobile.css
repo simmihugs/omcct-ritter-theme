@@ -1,0 +1,23 @@
+@media (max-width: 768px) {
+    .footer-content-box {
+        padding: 10px;
+    }
+    
+    .footer-navigation ul {
+        gap: 10px;
+    }
+    
+    .footer-navigation a {
+        font-size: 11px;
+    }
+
+    .footer-copyright {
+        font-size: 10px !important; /* Winzig, aber lesbar */
+        color: #666;
+        line-height: 1.2;
+        margin-bottom: 5px;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}

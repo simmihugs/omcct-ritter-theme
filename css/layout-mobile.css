@@ -1,0 +1,19 @@
+@media (max-width: 1024px) {
+     .content-wrapper {
+        padding-top: 70px !important;
+    }
+
+     body {
+        font-size: 17px;
+        line-height: 1.4;
+    }
+
+     h1 {
+        font-size: 1.8rem !important;
+        margin-top: 0.5rem;
+    }
+
+     .site-content {
+        padding: 10px 15px;
+    }
+}

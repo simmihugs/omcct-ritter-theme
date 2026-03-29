@@ -6,13 +6,11 @@
     z-index: 2000;
     display: flex;
     justify-content: center;
-    /* Verhindert Überlappung mit Content-Hintergrund auf Mobile */
     background-color: transparent; 
 }
 
 .footer-content-box {
     background-color: rgba(255, 255, 255, 1.0);
-    /* Magic Number 300px entfernt -> Nutze max-width oder flexibles Padding */
     padding: 10px 20px; 
     border-top: 2px solid var(--primary-red, #b00000);
     width: 100%;
@@ -29,7 +27,6 @@
     gap: 5px;
 }
 
-/* Copyright Text */
 .footer-container p {
     margin: 0;
     font-size: 12px;
@@ -43,7 +40,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* Wichtig für Mobile! */
+    flex-wrap: wrap;
 }
 
 .footer-navigation a {
@@ -56,19 +53,4 @@
 
 .footer-navigation a:hover {
     opacity: 0.7;
-}
-
-/* --- Responsive Anpassungen --- */
-@media (max-width: 768px) {
-    .footer-content-box {
-        padding: 10px;
-    }
-    
-    .footer-navigation ul {
-        gap: 10px; /* Weniger Platz zwischen Links auf dem Handy */
-    }
-    
-    .footer-navigation a {
-        font-size: 11px; /* Kleinere Schrift für kleine Screens */
-    }
 }

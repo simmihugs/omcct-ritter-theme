@@ -27,7 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    background-image: url('../img/wappen_30.png');
+    background-image: url('../img/wappen_10.png');
     /* Relative Position statt fixer Pixel */
     background-position: center calc(var(--header-height) + 100px);
     background-repeat: no-repeat;

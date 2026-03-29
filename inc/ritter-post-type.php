@@ -16,6 +16,7 @@ function register_ritter_post_type() {
         'has_archive'        => false,
         'menu_icon'          => 'dashicons-shield',
         'supports'           => array('title', 'editor', 'thumbnail'),
+		'rewrite'            => array('slug' => 'ritter-mitglied'),
         'show_in_rest'       => true, 
     );
 

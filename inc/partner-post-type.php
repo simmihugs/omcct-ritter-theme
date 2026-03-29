@@ -19,12 +19,12 @@ function register_partner_post_type() {
     $args = array(
         'labels'             => $labels,
         'public'             => true,
-        'has_archive'        => true,
+        'has_archive'        => false,
         'menu_icon'          => 'dashicons-groups',
         'menu_position'      => 6,
         'supports'           => array('title', 'editor', 'thumbnail'),
         'show_in_rest'       => true,
-        'rewrite'            => array('slug' => 'partner'),
+        'rewrite'            => array('slug' => 'partner-bund'),
     );
 
     register_post_type('partner', $args);

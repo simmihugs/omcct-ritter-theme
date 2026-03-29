@@ -12,21 +12,20 @@ function register_archiv_post_type() {
 }
 
 function register_archiv_logic() {
-    // 1. Den Post Type registrieren
     $args = array(
-        'public' => true,
-        'label'  => 'Archiv',
-        'menu_icon' => 'dashicons-archive',
-        'supports' => array('title', 'editor', 'thumbnail'),
+        'public'       => true,
+        'label'        => 'Archiv',
+        'menu_icon'    => 'dashicons-archive',
+        'supports'     => array('title', 'editor', 'thumbnail'),
         'show_in_rest' => true,
-        'has_archive' => true,
+        'has_archive'  => false,
+		'rewrite'      => array('slug' => 'dokument'),
     );
     register_post_type('archiv_doc', $args);
 
-    // 2. Kategorien für das Archiv (Taxonomie)
     register_taxonomy('archiv_kategorie', 'archiv_doc', array(
         'label' => 'Archiv-Kategorien',
-        'hierarchical' => true, // Verhält sich wie Kategorien, nicht wie Tags
+        'hierarchical' => true,
         'show_in_rest' => true,
     ));
 }

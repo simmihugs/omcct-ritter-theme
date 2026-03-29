@@ -23,14 +23,14 @@ function register_news_post_type() {
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
-        'rewrite'            => array('slug' => 'news'),
+        'rewrite'            => array('slug' => 'news-item'),
         'capability_type'    => 'post',
-        'has_archive'        => true,
+        'has_archive'        => false,
         'hierarchical'       => false,
-        'menu_position'      => 5, // Direkt unter "Beiträge"
-        'menu_icon'          => 'dashicons-megaphone', // Das Sprachrohr-Icon
+        'menu_position'      => 5,
+        'menu_icon'          => 'dashicons-megaphone',
         'supports'           => array('title', 'editor', 'thumbnail', 'excerpt'),
-        'show_in_rest'       => true, // WICHTIG: Aktiviert den modernen Gutenberg-Editor
+        'show_in_rest'       => true,
     );
 
     register_post_type('news', $args);

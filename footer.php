@@ -2,7 +2,7 @@
     </div> </div> <footer class="site-footer">
     <div class="footer-content-box">
         <div class="footer-copyright">
-            &copy; <?php echo date('Y'); ?> OMCCT - Ordo Militiae Christi Chordi ad
+            &copy; <?php echo date('Y'); ?> OMCCT - Ordo Militiae Christi Chordi ad Tirolias
         </div>
         <nav class="footer-navigation">
             <?php

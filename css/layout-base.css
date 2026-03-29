@@ -24,11 +24,13 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    background-image: url('../img/wappen_15.png');
+    background-image: url('../img/wappen_10.png');
     background-position: center calc(var(--header-height) + 100px);
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: serif;
+    font-size: 20px;
+    line-height: 1.5;
 }
 
 .main-container {

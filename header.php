@@ -13,8 +13,11 @@
 		<div class="red-stripe">
 			<div class="header-container">
 
+
 				<div class="logo-area">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/wappen.png" alt="Wappen">
+					<a href="<?php echo esc_url(home_url('/')); ?>" class="logo-home-link">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/wappen.png" alt="Wappen">
+					</a>
 				</div>
 
 				<div class="branding">

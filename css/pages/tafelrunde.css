@@ -143,31 +143,3 @@
     color: var(--primary-red, #800000);
     font-weight: bold;
 }
-
-@media (max-width: 768px) {
-    .ritter-card {
-        flex-direction: column;
-        align-items: center;
-        padding: 1.25rem;
-        gap: 1.5rem;
-    }
-    
-    .ritter-sidebar {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 18.75rem;
-    }
-
-    .ritter-main-content {
-        text-align: center;
-    }
-
-    .global-info-container {
-        bottom: 1.25rem;
-        right: 1.25rem;
-    }
-
-    .info-button:hover .info-label {
-        display: none;
-    }
-}

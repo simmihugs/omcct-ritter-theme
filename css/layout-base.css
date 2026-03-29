@@ -90,3 +90,45 @@ body {
         background-position: center 150px;
     }
 }
+
+@media (min-width: 1025px) {
+    .header-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+
+    .branding {
+        order: 1;
+        margin-right: auto;
+    }
+
+    .main-navigation {
+        order: 2;
+        display: flex;
+    }
+
+    .header-actions {
+        order: 3;
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    .logo-area {
+        order: 4;
+        position: relative;
+        z-index: 10;
+    }
+
+    .logo-area img {
+        height: 85px;
+        margin-top: 15px;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+    }
+}

@@ -13,15 +13,15 @@
 }
 
 .title {
-    font-size: clamp(20px, 4vw, 28px); /* Schrift skaliert zwischen 20px und 28px */
+    font-size: clamp(20px, 4vw, 28px);
     font-weight: bold;
     letter-spacing: 2px;
     line-height: 1.2;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Bessere Lesbarkeit auf hellem BG */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .tagline {
-    font-size: 11px;
+    font-size: 10px;
     font-style: italic;
     opacity: 0.9;
     white-space: nowrap;
@@ -40,15 +40,12 @@
 }
 
 .logo-area img {
-    /* Keine absolute Positionierung mehr, um das Layout nicht zu sprengen */
     height: var(--logo-height-desktop);
     width: auto;
     filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
     z-index: 1100;
     transition: height 0.3s ease;
 }
-
-/* --- Responsive Anpassungen --- */
 
 @media (max-width: 768px) {
     .logo-area img {

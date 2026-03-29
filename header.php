@@ -14,7 +14,7 @@
 			<div class="header-container">
 				<div class="branding">
 					<span class="title">OMCCT</span>
-					<span class="tagline">Ordo Militiae Christi Chordi ad</span>
+					<span class="tagline">Ordo Militiae Christi Chordi ad Tirolias</span>
 				</div>
 
 				<nav class="main-navigation">

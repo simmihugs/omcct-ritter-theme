@@ -1,0 +1,40 @@
+@media (max-width: 1024px) {
+    .partner-grid {
+        grid-template-columns: 1fr !important; 
+        gap: 1.5rem;
+        padding: 1.5rem 10px;
+    }
+
+    .partner-card {
+        padding: 1.5rem;
+        flex-direction: row; 
+        align-items: center;
+        text-align: left;
+        gap: 1.5rem;
+    }
+
+    .partner-wappen {
+        flex: 0 0 80px; 
+        height: 80px;
+        margin-bottom: 0;
+    }
+
+    .partner-card h3 {
+        text-align: left;
+        margin: 0;
+        min-height: auto;
+        font-size: 1rem;
+        flex: 1;
+    }
+
+    .partner-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .action-btn {
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 1rem;
+    }
+}

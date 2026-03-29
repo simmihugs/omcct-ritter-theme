@@ -7,16 +7,13 @@ Version: 1.2.0
 */
 
 @import url('css/layout-base.css');
-@import url('css/layout-mobile.css');
 
 @import url('css/header/header-main.css');
 @import url('css/header/navigation.css');
 @import url('css/header/branding.css');
 @import url('css/header/login.css');
-@import url('css/header/mobile.css');
 
 @import url('css/footer.css');
-@import url('css/footer-mobile.css');
 
 @import url('css/pages/tafelrunde.css');
 @import url('css/pages/kontakt.css');
@@ -26,4 +23,9 @@ Version: 1.2.0
 @import url('css/pages/archiv.css');
 @import url('css/pages/kalender.css');
 
+/* Mobile */
+@import url('css/layout-mobile.css');
+@import url('css/header/mobile.css');
+@import url('css/footer-mobile.css');
 @import url('css/pages/news-mobile.css');
+@import url('css/pages/partner-mobile.css');

@@ -1,13 +1,10 @@
-/* Gitter-System für die Partner */
 .partner-grid {
     display: grid;
-    /* auto-fill verhindert, dass einzelne Karten bei wenig Content zu breit werden */
-    grid-template-columns: repeat(auto-fill, minmax(13.75rem, 1fr)); /* 220px */
-    gap: 1.875rem; /* 30px */
+    grid-template-columns: repeat(auto-fill, minmax(13.75rem, 1fr));
+    gap: 1.875rem;
     padding: 2.5rem 0;
 }
 
-/* Die einzelne Visitenkarte */
 .partner-card {
     background: #ffffff;
     border: 1px solid #e0e0e0;
@@ -18,7 +15,7 @@
     flex-direction: column;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    height: 100%; /* Wichtig: Alle Karten in einer Reihe sind gleich hoch */
+    height: 100%;
 }
 
 .partner-card:hover {
@@ -27,34 +24,29 @@
     border-color: var(--primary-red, #8B0000);
 }
 
-/* Wappen-Container */
 .partner-wappen {
     width: 100%;
-    height: 11.25rem; /* 180px - Einheitliche Bühne für die Wappen */
+    height: 11.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
-    /* Coping: Verhindert, dass extrem helle Logos im Weiß untergehen */
     background-color: #fafafa; 
     border-radius: 4px;
 }
 
 .partner-wappen img {
-    max-width: 85%; /* Etwas Puffer zum Rand sieht edler aus */
+    max-width: 85%;
     max-height: 85%;
     object-fit: contain; 
-    /* Verhindert graue Schleier bei transparenten PNGs in manchen Browsern */
     mix-blend-mode: multiply; 
 }
 
-/* Partner Name */
 .partner-card h3 {
     font-family: serif;
     font-size: 1.1rem;
     color: #333333;
     margin: 0.625rem 0 1rem 0;
-    /* Platz für 2 Zeilen Text, damit die Buttons immer auf einer Linie sind */
     min-height: 3em; 
     display: flex;
     align-items: center;
@@ -62,11 +54,10 @@
     line-height: 1.2;
 }
 
-/* Die Aktions-Buttons */
 .partner-actions {
     display: flex;
-    gap: 0.9375rem; /* 15px */
-    margin-top: auto; /* Schiebt die Buttons immer ganz nach unten */
+    gap: 0.9375rem;
+    margin-top: auto;
 }
 
 .action-btn {
@@ -83,7 +74,7 @@
     transition: all 0.3s ease;
     background: transparent;
     cursor: pointer;
-    position: relative; /* Für den Tooltip-Effekt */
+    position: relative;
 }
 
 .action-btn:hover {
@@ -91,7 +82,6 @@
     color: #ffffff;
 }
 
-/* Tooltip-Effekt (Coping für Feedback beim Klicken) */
 .action-btn:active::after {
     content: 'Kopiert!';
     position: absolute;
@@ -104,24 +94,4 @@
     font-size: 0.7rem;
     border-radius: 4px;
     white-space: nowrap;
-}
-
-/* --- Mobile View --- */
-@media (max-width: 600px) {
-    .partner-grid {
-        grid-template-columns: 1fr 1fr; /* Zwei Karten nebeneinander auf Mobile */
-        gap: 1rem;
-    }
-    
-    .partner-card {
-        padding: 1rem;
-    }
-
-    .partner-wappen {
-        height: 8rem; /* Wappen etwas kleiner auf Handy */
-    }
-    
-    .partner-card h3 {
-        font-size: 0.9rem;
-    }
 }

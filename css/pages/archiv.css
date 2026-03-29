@@ -1,31 +1,26 @@
-/* Container-Fixing */
 .archiv-container {
     max-width: var(--main-max-width, 1200px);
     margin: 0 auto;
     position: relative;
-    /* Nutzt die Header-Variable statt !important 100px */
     padding-top: calc(var(--header-height, 100px) + 20px);
 }
 
-/* Fixierter Header-Bereich */
 .archiv-sticky-header {
-    position: sticky; /* Modernes Sticky statt Fixed, um im Fluss zu bleiben */
+    position: sticky;
     top: var(--header-height, 100px);
     background: #ffffff;
     z-index: 100;
     padding: 1.25rem 0;
     border-bottom: 2px solid var(--primary-red, #8b0000);
-    /* Coping: Verhindert Flackern in Safari beim Scrollen */
     -webkit-backface-visibility: hidden;
 }
 
 .archiv-sticky-header h1 {
     margin: 0 0 1rem 0;
     color: var(--primary-red, #8b0000);
-    font-size: clamp(1.5rem, 5vw, 2.2rem); /* Skaliert Schriftgröße */
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
 }
 
-/* Die Sprungmarken (Jump-Links) */
 .archiv-nav {
     display: flex;
     flex-wrap: wrap;
@@ -52,7 +47,6 @@
     color: #ffffff;
 }
 
-/* Content Bereich */
 .archiv-content-scroll {
     margin-top: 2rem;
     display: block;
@@ -60,13 +54,11 @@
 }
 
 .archiv-section {
-    /* Dynamischer Sprungpunkt: Header + Sticky-Nav-Höhe */
     scroll-margin-top: calc(var(--header-height, 100px) + 150px); 
     padding: 2.5rem 0;
     border-bottom: 1px solid #eee;
 }
 
-/* Die Artikel-Einträge */
 .archiv-article-entry {
     background: #ffffff;
     border-left: 5px solid var(--primary-red, #8b0000);
@@ -81,7 +73,7 @@
     font-size: 1.25rem;
 }
 
-/* Download-Buttons (WP-Blöcke) */
+
 .wp-block-file__button {
     background-color: var(--primary-red, #8b0000) !important;
     color: #ffffff !important;
@@ -96,26 +88,5 @@
     background-color: #333333 !important;
 }
 
-/* --- MOBILE & BROWSER COPING --- */
 
-@media (max-width: 768px) {
-    .archiv-sticky-header {
-        position: relative; /* Auf kleinen Handys ist Sticky oft störend */
-        top: 0;
-        padding: 10px 0;
-    }
-    
-    .archiv-section {
-        scroll-margin-top: 20px; /* Sprungpunkt anpassen, wenn Header nicht mehr fix ist */
-        padding: 20px 0;
-    }
 
-    .archiv-nav {
-        justify-content: center;
-    }
-
-    .archiv-article-entry {
-        padding: 15px;
-        border-left-width: 3px;
-    }
-}

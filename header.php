@@ -83,24 +83,7 @@
 		</div>
 	</div>
 
-	<div id="mobile-menu-overlay" class="mobile-menu-overlay">
-		<div class="mobile-menu-content">
-			<div class="mobile-login-row">
-				<?php if (is_user_logged_in()) : ?>
-					<a href="<?php echo wp_logout_url(home_url()); ?>">Abmelden <span class="dashicons dashicons-exit"></span></a>
-				<?php else : ?>
-					<a href="<?php echo wp_login_url(); ?>">Recken-Login <span class="dashicons dashicons-admin-users"></span></a>
-				<?php endif; ?>
-			</div>
-			<?php
-			wp_nav_menu(array(
-				'theme_location' => 'main-menu',
-				'container' => false,
-				'menu_class' => 'mobile-nav-list',
-			));
-			?>
-		</div>
-	</div>
+
 	<div class="fixed-sidebar-decoration"></div>
 
 	<div class="main-container content-wrapper">

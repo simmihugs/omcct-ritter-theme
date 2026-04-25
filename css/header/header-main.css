@@ -1,12 +1,9 @@
-
-
 :root {
-    /* Die exakte Übersetzung deiner Werte */
-    --header-gap: 1.25rem;           /* 20px */
-    --stripe-height: 5rem;           /* 80px */
-    --branding-width: 15.625rem;     /* 250px */
-    --logo-area-width: 9.375rem;     /* 150px */
-    --header-max-width: 81.25rem;    /* 1300px */
+    --header-gap: 1.25rem;   
+    --stripe-height: 5rem;   
+    --branding-width: 15.625rem;
+    --logo-area-width: 9.375rem;
+    --header-max-width: 81.25rem;
 }
 
 .site-header {
@@ -35,7 +32,7 @@
     max-width: var(--header-max-width);
     margin: 0 auto;
     display: flex;
-    justify-content: center; /* Behält deinen gewünschten Effekt */
+    justify-content: center; 
     align-items: center;
     position: relative;
     pointer-events: auto;
@@ -51,4 +48,12 @@
 
 .logo-area {
     flex-basis: var(--logo-area-width);
+}
+
+.main-navigation {
+    flex: 1;         
+    display: flex;
+    justify-content: center; 
+    min-width: 0;     
+    margin: 0 15px;   
 }
